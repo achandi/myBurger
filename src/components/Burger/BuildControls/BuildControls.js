@@ -16,14 +16,21 @@ const buildControls = props => (
       return (
         <BuildControl
           type={item.type}
-          addIngredients={() => props.add(item.type)}
-          removeIngredients={() => props.remove(item.type)}
+          addIngredients={() => props.add(item.type, 'add')}
+          removeIngredients={() => props.remove(item.type, 'subtract')}
           key={item.label}
           label={item.label}
           disabledInfo={props.disabled[item.type]}
         />
       );
     })}
+    <button
+      onClick={props.purchasing}
+      disabled={!props.purchasable}
+      className={classes.OrderButton}
+    >
+      ORDER NOW
+    </button>
   </div>
 );
 
