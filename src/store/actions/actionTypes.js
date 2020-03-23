@@ -1,0 +1,15 @@
+export const INGREDIENT_HANDLER = 'INGREDIENT_HANDLER';
+export const ORDERGET = 'ORDERGET';
+export const INGGET = 'INGGET';
+export const INGGETFAIL = 'INGGETFAIL';
+export const PURCHASE_SUCCESS = 'PURCHASE_SUCCESS';
+export const PURCHASE_FAIL = 'PURCHASE_FAIL';
+export const LOADING = 'LOADING';
+
+export const AUTH_LOADING = 'AUTH_LOADING';
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_FAIL = 'AUTH_FAIL';
+
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+
+export const SET_AUTH_REDIRECT_PATH = 'SET_AUTH_REDIRECT_PATH';
