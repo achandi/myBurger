@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import axios from '../axios-orders';
-import Loader from '../components/UI/Spinner/Spinner';
-import Aux from '../hoc/Aux';
-import Burger from '../components/Burger/Burger';
-import BuildControls from '../components/Burger/BuildControls/BuildControls';
-import OrderSummary from '../components/Burger/OrderSummary/OrderSummary';
-import Modal from '../components/UI/Modal/Modal';
-import WithErrorHandler from '../hoc/withErrorHandler';
+import axios from '../../axios-orders';
+import Loader from '../../components/UI/Spinner/Spinner';
+import Aux from '../../hoc/Aux';
+import Burger from '../../components/Burger/Burger';
+import BuildControls from '../../components/Burger/BuildControls/BuildControls';
+import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
+import Modal from '../../components/UI/Modal/Modal';
+import WithErrorHandler from '../../hoc/withErrorHandler';
 import { connect } from 'react-redux';
-import { ingHandler, ingGet } from '../store/actions/burgerBuilder';
-import { setAuthRedirectPath } from '../store/actions/auth';
-class BurgerBuilder extends Component {
+import { ingHandler, ingGet } from '../../store/actions/burgerBuilder';
+import { setAuthRedirectPath } from '../../store/actions/auth';
+
+export class BurgerBuilder extends Component {
   state = {
     // ingredients: null, //ingredients and totla price are both
     // totalPrice: 4,
