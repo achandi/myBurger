@@ -1,7 +1,7 @@
 import * as actionType from '../actions/actionTypes';
 const initialState = {
   orders: [],
-  loading: false
+  loading: false,
 };
 
 // const fetchedOrder = Object.keys(res.data).map(key => ({
@@ -9,10 +9,10 @@ const initialState = {
 //     ...res.data[key]
 //   }));
 
-const fetchedOrder = actions =>
-  Object.keys(actions.res.data).map(key => ({
+const fetchedOrder = (actions) =>
+  Object.keys(actions.res.data).map((key) => ({
     id: key,
-    ...actions.res.data[key]
+    ...actions.res.data[key],
   }));
 
 const reducer = (state = initialState, actions) => {
@@ -27,12 +27,15 @@ const reducer = (state = initialState, actions) => {
       //     id: key,
       //     ...actions.res.data[key]
       //   }));
-      return { ...state, orders: [...state.orders, ...fetchedOrder(actions)] };
+      return { ...state, orders: [...fetchedOrder(actions)] };
     case actionType.PURCHASE_SUCCESS:
       return {
         ...state,
         loading: false,
-        orders: [...state.orders, { id: actions.orderId, ...actions.orderData }]
+        orders: [
+          ...state.orders,
+          { id: actions.orderId, ...actions.orderData },
+        ],
       };
 
     case actionType.PURCHASE_FAIL:
