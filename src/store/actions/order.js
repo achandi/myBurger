@@ -1,5 +1,4 @@
 import * as actionType from './actionTypes';
-import axios from '../../axios-orders';
 
 export const orderGetSync = (res) => {
   return { type: actionType.ORDERGET, res };
@@ -9,7 +8,7 @@ export const orderGet = (token, userId) => {
   return { type: actionType.ORDER_GET, token, userId };
 };
 
-// export const orderGet = (token, userId) => async (dispatch) => {
+// export const orderGet = (token, userId) => async (dispatch) => { ///changed for saga practice
 //   try {
 //     const res = await axios.get(
 //       './orders.json?auth=' +

@@ -3,14 +3,14 @@ import * as actionType from '../actions/actionTypes';
 const initialState = {
   totalPrice: 4,
   ingredients: null,
-  error: false
+  error: false,
 };
 
 const INGREDIENT_PRICES = {
   meat: 1.4,
   cheese: 0.8,
   bacon: 1,
-  salad: 0.4
+  salad: 0.4,
 };
 
 const ingredientsHandler = (state, actions) => {
@@ -20,9 +20,8 @@ const ingredientsHandler = (state, actions) => {
       actions.operator === 'add' ? oldCount + 1 : oldCount - 1;
     const updatedIngredients = {
       ...state.ingredients,
-      [actions.ingType]: updatedCount
+      [actions.ingType]: updatedCount,
     };
-    //   updatedIngredients[ingType] = updatedCount;
     return {
       ...state,
       ingredients: updatedIngredients,
@@ -30,7 +29,7 @@ const ingredientsHandler = (state, actions) => {
         actions.operator === 'add'
           ? state.totalPrice + INGREDIENT_PRICES[actions.ingType]
           : state.totalPrice - INGREDIENT_PRICES[actions.ingType],
-      building: true
+      building: true,
     };
   } else {
     return state;
@@ -40,12 +39,11 @@ const ingredientsHandler = (state, actions) => {
 export default (state = initialState, actions) => {
   switch (actions.type) {
     case actionType.INGGET:
-      console.log(actions.ingredients);
       return {
         ...state,
         ingredients: actions.ingredients,
         error: false,
-        building: false
+        building: false,
       };
     case actionType.INGGETFAIL:
       return { ...state, error: true };

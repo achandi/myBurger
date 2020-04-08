@@ -1,16 +1,4 @@
 import * as actionType from './actionTypes';
-import axios from '../../axios-orders';
-
-//   axios
-//     .get('https://burger-app-33a3f.firebaseio.com/ingredients.json')
-//     .then(ingredients => {
-//       console.log(ingredients);
-//       this.setState({ ingredients: ingredients.data });
-//     })
-//     .catch(error => {
-//       console.log(error);
-//       this.setState({ error: true });
-//     });
 
 export const ingGetSync = (res) => {
   return { type: actionType.INGGET, ingredients: res };
@@ -19,7 +7,7 @@ export const ingGetSync = (res) => {
 export const ingGetFail = (res) => {
   return { type: actionType.INGGETFAIL };
 };
-
+//changed for saga practice below
 // export const ingGet = store => async dispatch => {
 
 export const ingGet = () => {
