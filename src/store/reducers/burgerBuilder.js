@@ -41,7 +41,9 @@ export default (state = initialState, actions) => {
     case actionType.INGGET:
       return {
         ...state,
-        ingredients: actions.ingredients,
+        ingredients: state.ingredients
+          ? state.ingredients
+          : actions.ingredients,
         error: false,
         building: false,
       };
@@ -49,6 +51,8 @@ export default (state = initialState, actions) => {
       return { ...state, error: true };
     case actionType.INGREDIENT_HANDLER:
       return ingredientsHandler(state, actions);
+    case actionType.CLEAR_BURGER_STATE:
+      return { ...initialState };
     default:
       return state;
   }

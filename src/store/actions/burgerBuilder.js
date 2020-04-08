@@ -23,6 +23,9 @@ export const ingGet = () => {
 //   }
 // };
 
+export const clearBurState = () => ({
+  type: actionType.CLEAR_BURGER_STATE,
+});
 export const ingHandler = (ingType, operator) => {
   console.log('inghandler');
   return {
